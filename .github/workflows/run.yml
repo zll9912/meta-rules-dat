@@ -43,10 +43,10 @@ jobs:
           repository: v2fly/domain-list-community
           path: community
 
-      - name: Checkout xishang0128/convert
+      - name: Checkout MetaCubeX/meta-rules-converter
         uses: actions/checkout@v4
         with:
-          repository: xishang0128/convert
+          repository: MetaCubeX/meta-rules-converter
           path: convert
 
       - name: Checkout cokebar/gfwlist2dnsmasq
