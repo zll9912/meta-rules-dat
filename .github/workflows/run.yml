@@ -61,11 +61,6 @@ jobs:
           go-version: '1.22'
           cache-dependency-path: ./custom/go.sum
 
-      - name: Get geoip.dat relative files
-        run: |
-          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat
-          wget https://github.com/Loyalsoldier/geoip/raw/release/geoip.dat.sha256sum
-
       - name: Generate GFWList domains
         run: |
           cd gfwlist2dnsmasq || exit 1
@@ -278,6 +273,7 @@ jobs:
           mkdir -p ./publish/
           wget https://raw.githubusercontent.com/xishang0128/geoip/release/Country.mmdb -O ./publish/country-lite.mmdb
           wget https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb -O ./publish/country.mmdb
+          wget https://raw.githubusercontent.com/xishang0128/geoip/release/GeoLite2-ASN.mmdb -O ./publish/GeoLite2-ASN.mmdb
           install -Dp ./geoip-lite.dat ./publish/
           install -Dp ./geoip.dat ./publish/
           install -Dp ./custom/publish/geosite.dat ./publish/
@@ -301,6 +297,7 @@ jobs:
           sha256sum geoip-lite.db > geoip-lite.db.sha256sum
           sha256sum geoip.metadb > geoip.metadb.sha256sum
           sha256sum geoip-lite.metadb > geoip-lite.metadb.sha256sum
+          sha256sum GeoLite2-ASN.mmdb > GeoLite2-ASN.mmdb.sha256sum
 
       - name: Delete current release assets
         uses: andreaswilli/delete-release-assets-action@v3.0.0
