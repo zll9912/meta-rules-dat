@@ -29,7 +29,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          repository: MetaCubeX/meta-rules-dat
+          repository: zll9912/meta-rules-dat
 
       - name: Checkout Loyalsoldier/domain-list-custom
         uses: actions/checkout@v4
