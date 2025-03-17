@@ -126,6 +126,12 @@ jobs:
           [ -f "proxy-reserve.txt" ] && cat proxy-reserve.txt >> ./community/data/geolocation-\!cn
           cp ./community/data/cn direct-list.txt
           cp ./community/data/geolocation-\!cn proxy-list.txt
+  
+      - name: Add `http ping domain`
+        run: |
+          cat ../resouces/as > ./community/data/delay-as
+          cat ../resouces/am > ./community/data/delay-am
+          cat ../resouces/eu > ./community/data/delay-eu
 
       - name: Create `google-cn`、`apple-cn`、`gfw` lists
         run: |
