@@ -129,9 +129,9 @@ jobs:
   
       - name: Add `http ping domain`
         run: |
-          cat ../resouces/as > ./community/data/delay-as
-          cat ../resouces/am > ./community/data/delay-am
-          cat ../resouces/eu > ./community/data/delay-eu
+          cat ./resouces/as > ./community/data/delay-as
+          cat ./resouces/am > ./community/data/delay-am
+          cat ./resouces/eu > ./community/data/delay-eu
 
       - name: Create `google-cn`、`apple-cn`、`gfw` lists
         run: |
